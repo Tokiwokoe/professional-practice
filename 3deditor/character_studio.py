@@ -1,6 +1,4 @@
-from ModelingTools import ModelingTools
-
-class CharacterStudio(ModelingTools):
+class CharacterStudio():
     """ 
     Создание персонажей.
 

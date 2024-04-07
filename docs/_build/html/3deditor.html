@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3deditor package &mdash; документация 3d Editor Docs 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=9ca2116e"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=29b1f277"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            3d Editor Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">3deditor package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-3deditor.animation">3deditor.animation module</a><ul>
+<li><a class="reference internal" href="#deditor.animation.Animation"><code class="docutils literal notranslate"><span class="pre">Animation</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.animation.Animation._"><code class="docutils literal notranslate"><span class="pre">Animation.анимировать_объект()</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">Animation.загрузить_анимации()</span></code></a></li>
+<li><a class="reference internal" href="#deditor.animation.Animation.___"><code class="docutils literal notranslate"><span class="pre">Animation.перемещение_объекта_в_пространстве()</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">Animation.поворот_объекта()</span></code></a></li>
+<li><a class="reference internal" href="#deditor.animation.Animation.__"><code class="docutils literal notranslate"><span class="pre">Animation.создать_новую_анимацию()</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">Animation.создать_сценарий_анимации()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.camera_sequence">3deditor.camera_sequence module</a><ul>
+<li><a class="reference internal" href="#deditor.camera_sequence.CameraSequence"><code class="docutils literal notranslate"><span class="pre">CameraSequence</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.camera_sequence.CameraSequence.__"><code class="docutils literal notranslate"><span class="pre">CameraSequence.задать_движение_камеры()</span></code></a></li>
+<li><a class="reference internal" href="#deditor.camera_sequence.CameraSequence.___"><code class="docutils literal notranslate"><span class="pre">CameraSequence.настроить_тайминг_замены_камеры()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.character_studio">3deditor.character_studio module</a><ul>
+<li><a class="reference internal" href="#deditor.character_studio.CharacterStudio"><code class="docutils literal notranslate"><span class="pre">CharacterStudio</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.character_studio.CharacterStudio._"><code class="docutils literal notranslate"><span class="pre">CharacterStudio.загрузка_персонажа()</span></code></a></li>
+<li><a class="reference internal" href="#deditor.character_studio.CharacterStudio.___"><code class="docutils literal notranslate"><span class="pre">CharacterStudio.обозначить_скелет_для_движения()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.drawing">3deditor.drawing module</a><ul>
+<li><a class="reference internal" href="#deditor.drawing.Drawing"><code class="docutils literal notranslate"><span class="pre">Drawing</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.drawing.Drawing."><code class="docutils literal notranslate"><span class="pre">Drawing.рисовать()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.geometry_optimization_tool">3deditor.geometry_optimization_tool module</a><ul>
+<li><a class="reference internal" href="#deditor.geometry_optimization_tool.GeometryOptimization"><code class="docutils literal notranslate"><span class="pre">GeometryOptimization</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.geometry_optimization_tool.GeometryOptimization.__"><code class="docutils literal notranslate"><span class="pre">GeometryOptimization.сгладить_углы_фигуры()</span></code></a></li>
+<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">GeometryOptimization.уменьшить_количество_полигонов()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.hot_keys_settings">3deditor.hot_keys_settings module</a><ul>
+<li><a class="reference internal" href="#deditor.hot_keys_settings.HotKeysSettings"><code class="docutils literal notranslate"><span class="pre">HotKeysSettings</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.hot_keys_settings.HotKeysSettings.__"><code class="docutils literal notranslate"><span class="pre">HotKeysSettings.восстановить_по_умолчанию()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.material_editor">3deditor.material_editor module</a><ul>
+<li><a class="reference internal" href="#deditor.material_editor.MaterialEditor"><code class="docutils literal notranslate"><span class="pre">MaterialEditor</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.material_editor.MaterialEditor._"><code class="docutils literal notranslate"><span class="pre">MaterialEditor.изменить_цвет()</span></code></a></li>
+<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">MaterialEditor.сжать_текстуру()</span></code></a></li>
+<li><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">MaterialEditor.создать_текстуру()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.modeling_tools">3deditor.modeling_tools module</a><ul>
+<li><a class="reference internal" href="#deditor.modeling_tools.ModelingTools"><code class="docutils literal notranslate"><span class="pre">ModelingTools</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.modeling_tools.ModelingTools._"><code class="docutils literal notranslate"><span class="pre">ModelingTools.изменить_размер()</span></code></a></li>
+<li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">ModelingTools.наложить_текстуру()</span></code></a></li>
+<li><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">ModelingTools.повернуть_объект()</span></code></a></li>
+<li><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">ModelingTools.создать_объект()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.models_viewing">3deditor.models_viewing module</a><ul>
+<li><a class="reference internal" href="#deditor.models_viewing.ModelsViewing"><code class="docutils literal notranslate"><span class="pre">ModelsViewing</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.models_viewing.ModelsViewing._"><code class="docutils literal notranslate"><span class="pre">ModelsViewing.поворот_модели()</span></code></a></li>
+<li><a class="reference internal" href="#deditor.models_viewing.ModelsViewing.___"><code class="docutils literal notranslate"><span class="pre">ModelsViewing.просмотр_модели_без_загрузки()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.multiplecharacters_in_scene">3deditor.multiplecharacters_in_scene module</a><ul>
+<li><a class="reference internal" href="#deditor.multiplecharacters_in_scene.MultipleCharactersInScene"><code class="docutils literal notranslate"><span class="pre">MultipleCharactersInScene</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.multiplecharacters_in_scene.MultipleCharactersInScene._"><code class="docutils literal notranslate"><span class="pre">MultipleCharactersInScene.дублирование_персонажей()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.muscle_creation">3deditor.muscle_creation module</a><ul>
+<li><a class="reference internal" href="#deditor.muscle_creation.MuscleCreation"><code class="docutils literal notranslate"><span class="pre">MuscleCreation</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.muscle_creation.MuscleCreation.__"><code class="docutils literal notranslate"><span class="pre">MuscleCreation.настройка_связей_мышц()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.particle_system">3deditor.particle_system module</a><ul>
+<li><a class="reference internal" href="#deditor.particle_system.ParticleSystem"><code class="docutils literal notranslate"><span class="pre">ParticleSystem</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.particle_system.ParticleSystem.__"><code class="docutils literal notranslate"><span class="pre">ParticleSystem.выбрать_несколько_объектов()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.rendering">3deditor.rendering module</a><ul>
+<li><a class="reference internal" href="#deditor.rendering.Rendering"><code class="docutils literal notranslate"><span class="pre">Rendering</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.rendering.Rendering._"><code class="docutils literal notranslate"><span class="pre">Rendering.выбрать_файл()</span></code></a></li>
+<li><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">Rendering.изменить_разрешение()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.saving">3deditor.saving module</a><ul>
+<li><a class="reference internal" href="#deditor.saving.Saving"><code class="docutils literal notranslate"><span class="pre">Saving</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.saving.Saving.__"><code class="docutils literal notranslate"><span class="pre">Saving.заменить_существующий_файл()</span></code></a></li>
+<li><a class="reference internal" href="#deditor.saving.Saving.____"><code class="docutils literal notranslate"><span class="pre">Saving.открыть_для_изменения_существующий_файл()</span></code></a></li>
+<li><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">Saving.сохранить_новый_файл()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.script_language">3deditor.script_language module</a><ul>
+<li><a class="reference internal" href="#deditor.script_language.ScriptLanguage"><code class="docutils literal notranslate"><span class="pre">ScriptLanguage</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.script_language.ScriptLanguage._"><code class="docutils literal notranslate"><span class="pre">ScriptLanguage.задать_координаты()</span></code></a></li>
+<li><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">ScriptLanguage.изменить_размер()</span></code></a></li>
+<li><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">ScriptLanguage.наложить_текстуры()</span></code></a></li>
+<li><a class="reference internal" href="#deditor.script_language.ScriptLanguage.__"><code class="docutils literal notranslate"><span class="pre">ScriptLanguage.создать_геометрию_модели()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.shader_editor">3deditor.shader_editor module</a><ul>
+<li><a class="reference internal" href="#deditor.shader_editor.ShaderEditor"><code class="docutils literal notranslate"><span class="pre">ShaderEditor</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.simulation">3deditor.simulation module</a><ul>
+<li><a class="reference internal" href="#deditor.simulation.Simulation"><code class="docutils literal notranslate"><span class="pre">Simulation</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.simulation.Simulation._"><code class="docutils literal notranslate"><span class="pre">Simulation.анимировать_симуляцию()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.toolbar_settings">3deditor.toolbar_settings module</a><ul>
+<li><a class="reference internal" href="#deditor.toolbar_settings.ToolbarSettings"><code class="docutils literal notranslate"><span class="pre">ToolbarSettings</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.user_interface">3deditor.user_interface module</a><ul>
+<li><a class="reference internal" href="#deditor.user_interface.UserInterface"><code class="docutils literal notranslate"><span class="pre">UserInterface</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.user_interface.UserInterface.__"><code class="docutils literal notranslate"><span class="pre">UserInterface.восстановить_по_умолчанию()</span></code></a></li>
+<li><a class="reference internal" href="#deditor.user_interface.UserInterface."><code class="docutils literal notranslate"><span class="pre">UserInterface.вывести()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor.visualization">3deditor.visualization module</a><ul>
+<li><a class="reference internal" href="#deditor.visualization.Visualization"><code class="docutils literal notranslate"><span class="pre">Visualization</span></code></a><ul>
+<li><a class="reference internal" href="#deditor.visualization.Visualization._"><code class="docutils literal notranslate"><span class="pre">Visualization.визуализировать_модель()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-3deditor">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">3d Editor Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">3deditor package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/3deditor.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="deditor-package">
+<h1>3deditor package<a class="headerlink" href="#deditor-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-3deditor.animation">
+<span id="deditor-animation-module"></span><h2>3deditor.animation module<a class="headerlink" href="#module-3deditor.animation" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.animation.Animation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.animation.</span></span><span class="sig-name descname"><span class="pre">Animation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/animation.html#Animation"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.animation.Animation" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Редактор анимаций.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>объект (object): Анимируемый объект.
+анимации (list): Список анимаций.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.animation.Animation._">
+<span class="sig-name descname"><span class="pre">анимировать_объект</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/animation.html#Animation.анимировать_объект"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.animation.Animation._" title="Link to this definition"></a></dt>
+<dd><p>Анимировать объект.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">загрузить_анимации</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/animation.html#Animation.загрузить_анимации"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Загрузить анимации.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.animation.Animation.___">
+<span class="sig-name descname"><span class="pre">перемещение_объекта_в_пространстве</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/animation.html#Animation.перемещение_объекта_в_пространстве"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.animation.Animation.___" title="Link to this definition"></a></dt>
+<dd><p>Анимация перемещения объекта в пространстве.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">поворот_объекта</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/animation.html#Animation.поворот_объекта"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd><p>Анимация поворота объекта.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.animation.Animation.__">
+<span class="sig-name descname"><span class="pre">создать_новую_анимацию</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/animation.html#Animation.создать_новую_анимацию"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.animation.Animation.__" title="Link to this definition"></a></dt>
+<dd><p>Создать новую анимацию.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">создать_сценарий_анимации</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/animation.html#Animation.создать_сценарий_анимации"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd><p>Создать сценарий анимации.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.camera_sequence">
+<span id="deditor-camera-sequence-module"></span><h2>3deditor.camera_sequence module<a class="headerlink" href="#module-3deditor.camera_sequence" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.camera_sequence.CameraSequence">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.camera_sequence.</span></span><span class="sig-name descname"><span class="pre">CameraSequence</span></span><a class="reference internal" href="_modules/3deditor/camera_sequence.html#CameraSequence"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.camera_sequence.CameraSequence" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Создание и редактирование последовательности камер.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>количество_камер (int): Количество камер в последовательности.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.camera_sequence.CameraSequence.__">
+<span class="sig-name descname"><span class="pre">задать_движение_камеры</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/camera_sequence.html#CameraSequence.задать_движение_камеры"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.camera_sequence.CameraSequence.__" title="Link to this definition"></a></dt>
+<dd><p>Задать движение камеры.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.camera_sequence.CameraSequence.___">
+<span class="sig-name descname"><span class="pre">настроить_тайминг_замены_камеры</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/camera_sequence.html#CameraSequence.настроить_тайминг_замены_камеры"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.camera_sequence.CameraSequence.___" title="Link to this definition"></a></dt>
+<dd><p>Настроить тайминг замены камеры.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.character_studio">
+<span id="deditor-character-studio-module"></span><h2>3deditor.character_studio module<a class="headerlink" href="#module-3deditor.character_studio" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.character_studio.CharacterStudio">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.character_studio.</span></span><span class="sig-name descname"><span class="pre">CharacterStudio</span></span><a class="reference internal" href="_modules/3deditor/character_studio.html#CharacterStudio"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.character_studio.CharacterStudio" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Создание персонажей.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>заготовки_персонажей (list): Список заготовок персонажей.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.character_studio.CharacterStudio._">
+<span class="sig-name descname"><span class="pre">загрузка_персонажа</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/character_studio.html#CharacterStudio.загрузка_персонажа"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.character_studio.CharacterStudio._" title="Link to this definition"></a></dt>
+<dd><p>Загрузка персонажа.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.character_studio.CharacterStudio.___">
+<span class="sig-name descname"><span class="pre">обозначить_скелет_для_движения</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/character_studio.html#CharacterStudio.обозначить_скелет_для_движения"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.character_studio.CharacterStudio.___" title="Link to this definition"></a></dt>
+<dd><p>Обозначить скелет для движения.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.drawing">
+<span id="deditor-drawing-module"></span><h2>3deditor.drawing module<a class="headerlink" href="#module-3deditor.drawing" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.drawing.Drawing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.drawing.</span></span><span class="sig-name descname"><span class="pre">Drawing</span></span><a class="reference internal" href="_modules/3deditor/drawing.html#Drawing"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.drawing.Drawing" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Инструмент для рисования на поверхностях.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>размер_кисти (int): Размер кисти для рисования.
+цвет (str): Цвет, используемый для рисования в формате HEX.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.drawing.Drawing.">
+<span class="sig-name descname"><span class="pre">рисовать</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/drawing.html#Drawing.рисовать"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.drawing.Drawing." title="Link to this definition"></a></dt>
+<dd><p>Рисовать на поверхностях.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.geometry_optimization_tool">
+<span id="deditor-geometry-optimization-tool-module"></span><h2>3deditor.geometry_optimization_tool module<a class="headerlink" href="#module-3deditor.geometry_optimization_tool" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.geometry_optimization_tool.GeometryOptimization">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.geometry_optimization_tool.</span></span><span class="sig-name descname"><span class="pre">GeometryOptimization</span></span><a class="reference internal" href="_modules/3deditor/geometry_optimization_tool.html#GeometryOptimization"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.geometry_optimization_tool.GeometryOptimization" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Инструмент оптимизации геометрии.</p>
+<dl class="simple">
+<dt>Методы:</dt><dd><p>сгладить_углы_фигуры(): Сглаживает углы фигуры.
+уменьшить_количество_полигонов(): Уменьшает количество полигонов в фигуре.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.geometry_optimization_tool.GeometryOptimization.__">
+<span class="sig-name descname"><span class="pre">сгладить_углы_фигуры</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/geometry_optimization_tool.html#GeometryOptimization.сгладить_углы_фигуры"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.geometry_optimization_tool.GeometryOptimization.__" title="Link to this definition"></a></dt>
+<dd><p>Сгладить углы фигуры.</p>
+<p>Этот метод применяет операцию сглаживания углов к геометрической фигуре, чтобы сделать ее более гладкой.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">уменьшить_количество_полигонов</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/geometry_optimization_tool.html#GeometryOptimization.уменьшить_количество_полигонов"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd><p>Уменьшить количество полигонов.</p>
+<p>Этот метод уменьшает количество полигонов в геометрической фигуре, что может помочь улучшить ее производительность.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.hot_keys_settings">
+<span id="deditor-hot-keys-settings-module"></span><h2>3deditor.hot_keys_settings module<a class="headerlink" href="#module-3deditor.hot_keys_settings" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.hot_keys_settings.HotKeysSettings">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.hot_keys_settings.</span></span><span class="sig-name descname"><span class="pre">HotKeysSettings</span></span><a class="reference internal" href="_modules/3deditor/hot_keys_settings.html#HotKeysSettings"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.hot_keys_settings.HotKeysSettings" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Настройки интерфейса.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>установка_горячих_клавиш (dict): Словарь, содержащий соответствие функций и горячих клавиш.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.hot_keys_settings.HotKeysSettings.__">
+<span class="sig-name descname"><span class="pre">восстановить_по_умолчанию</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/hot_keys_settings.html#HotKeysSettings.восстановить_по_умолчанию"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.hot_keys_settings.HotKeysSettings.__" title="Link to this definition"></a></dt>
+<dd><p>Восстановить настройки горячих клавиш по умолчанию.</p>
+<p>Этот метод возвращает все горячие клавиши к значениям по умолчанию.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.material_editor">
+<span id="deditor-material-editor-module"></span><h2>3deditor.material_editor module<a class="headerlink" href="#module-3deditor.material_editor" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.material_editor.MaterialEditor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.material_editor.</span></span><span class="sig-name descname"><span class="pre">MaterialEditor</span></span><a class="reference internal" href="_modules/3deditor/material_editor.html#MaterialEditor"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.material_editor.MaterialEditor" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Редактор материалов.</p>
+<dl class="simple">
+<dt>Методы:</dt><dd><p>создать_текстуру(): Создает новую текстуру.
+изменить_цвет(): Изменяет цвет материала.
+сжать_текстуру(): Сжимает текстуру для экономии места.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.material_editor.MaterialEditor._">
+<span class="sig-name descname"><span class="pre">изменить_цвет</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/material_editor.html#MaterialEditor.изменить_цвет"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.material_editor.MaterialEditor._" title="Link to this definition"></a></dt>
+<dd><p>Изменить цвет.</p>
+<p>Этот метод позволяет изменить цвет материала, используемого для текстурирования объектов.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">сжать_текстуру</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/material_editor.html#MaterialEditor.сжать_текстуру"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd><p>Сжать текстуру.</p>
+<p>Этот метод сжимает текстуру для уменьшения ее размера на диске или в памяти.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">создать_текстуру</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/material_editor.html#MaterialEditor.создать_текстуру"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd><p>Создать текстуру.</p>
+<p>Этот метод создает новую текстуру для использования в материале.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.modeling_tools">
+<span id="deditor-modeling-tools-module"></span><h2>3deditor.modeling_tools module<a class="headerlink" href="#module-3deditor.modeling_tools" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.modeling_tools.ModelingTools">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.modeling_tools.</span></span><span class="sig-name descname"><span class="pre">ModelingTools</span></span><a class="reference internal" href="_modules/3deditor/modeling_tools.html#ModelingTools"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.modeling_tools.ModelingTools" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Инструменты моделирования.</p>
+<dl class="simple">
+<dt>Методы:</dt><dd><p>создать_объект(): Создает новый объект.
+повернуть_объект(): Поворачивает объект.
+изменить_размер(): Изменяет размер объекта.</p>
+</dd>
+<dt>Текстурирование:</dt><dd><p>наложить_текстуру(): Накладывает текстуру на объект.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.modeling_tools.ModelingTools._">
+<span class="sig-name descname"><span class="pre">изменить_размер</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/modeling_tools.html#ModelingTools.изменить_размер"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.modeling_tools.ModelingTools._" title="Link to this definition"></a></dt>
+<dd><p>Изменить размер.</p>
+<p>Этот метод изменяет размер объекта, увеличивая или уменьшая его масштаб.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">наложить_текстуру</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/modeling_tools.html#ModelingTools.наложить_текстуру"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#id6" title="Link to this definition"></a></dt>
+<dd><p>Наложить текстуру.</p>
+<p>Этот метод позволяет наложить текстуру на поверхность объекта для текстурирования.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">повернуть_объект</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/modeling_tools.html#ModelingTools.повернуть_объект"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#id7" title="Link to this definition"></a></dt>
+<dd><p>Повернуть объект.</p>
+<p>Этот метод позволяет поворачивать объект в трехмерном пространстве.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">создать_объект</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/modeling_tools.html#ModelingTools.создать_объект"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#id8" title="Link to this definition"></a></dt>
+<dd><p>Создать объект.</p>
+<p>Этот метод создает новый объект для моделирования.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.models_viewing">
+<span id="deditor-models-viewing-module"></span><h2>3deditor.models_viewing module<a class="headerlink" href="#module-3deditor.models_viewing" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.models_viewing.ModelsViewing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.models_viewing.</span></span><span class="sig-name descname"><span class="pre">ModelsViewing</span></span><a class="reference internal" href="_modules/3deditor/models_viewing.html#ModelsViewing"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.models_viewing.ModelsViewing" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Просмотр моделей.</p>
+<dl class="simple">
+<dt>Методы:</dt><dd><p>просмотр_модели_без_загрузки(): Позволяет просматривать модель без загрузки.
+поворот_модели(): Позволяет поворачивать модель для просмотра.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.models_viewing.ModelsViewing._">
+<span class="sig-name descname"><span class="pre">поворот_модели</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/models_viewing.html#ModelsViewing.поворот_модели"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.models_viewing.ModelsViewing._" title="Link to this definition"></a></dt>
+<dd><p>Поворот модели.</p>
+<p>Этот метод позволяет пользователю поворачивать модель для просмотра в трехмерном пространстве.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.models_viewing.ModelsViewing.___">
+<span class="sig-name descname"><span class="pre">просмотр_модели_без_загрузки</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/models_viewing.html#ModelsViewing.просмотр_модели_без_загрузки"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.models_viewing.ModelsViewing.___" title="Link to this definition"></a></dt>
+<dd><p>Просмотр модели без загрузки.</p>
+<p>Этот метод позволяет просматривать модель без необходимости ее загрузки в память.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.multiplecharacters_in_scene">
+<span id="deditor-multiplecharacters-in-scene-module"></span><h2>3deditor.multiplecharacters_in_scene module<a class="headerlink" href="#module-3deditor.multiplecharacters_in_scene" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.multiplecharacters_in_scene.MultipleCharactersInScene">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.multiplecharacters_in_scene.</span></span><span class="sig-name descname"><span class="pre">MultipleCharactersInScene</span></span><a class="reference internal" href="_modules/3deditor/multiplecharacters_in_scene.html#MultipleCharactersInScene"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.multiplecharacters_in_scene.MultipleCharactersInScene" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Инструмент для создания множественных персонажей в сцене.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>максимальное_количество_персонажей (int): Максимальное количество персонажей, которые можно создать в сцене.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.multiplecharacters_in_scene.MultipleCharactersInScene._">
+<span class="sig-name descname"><span class="pre">дублирование_персонажей</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/multiplecharacters_in_scene.html#MultipleCharactersInScene.дублирование_персонажей"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.multiplecharacters_in_scene.MultipleCharactersInScene._" title="Link to this definition"></a></dt>
+<dd><p>Дублирование персонажей.</p>
+<p>Этот метод позволяет дублировать персонажей в сцене.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.muscle_creation">
+<span id="deditor-muscle-creation-module"></span><h2>3deditor.muscle_creation module<a class="headerlink" href="#module-3deditor.muscle_creation" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.muscle_creation.MuscleCreation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.muscle_creation.</span></span><span class="sig-name descname"><span class="pre">MuscleCreation</span></span><a class="reference internal" href="_modules/3deditor/muscle_creation.html#MuscleCreation"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.muscle_creation.MuscleCreation" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Инструмент для создания и анимации мышц.</p>
+<dl class="simple">
+<dt>Методы:</dt><dd><p>настройка_связей_мышц(): Позволяет настроить связи между мышцами для анимации.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.muscle_creation.MuscleCreation.__">
+<span class="sig-name descname"><span class="pre">настройка_связей_мышц</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/muscle_creation.html#MuscleCreation.настройка_связей_мышц"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.muscle_creation.MuscleCreation.__" title="Link to this definition"></a></dt>
+<dd><p>Настройка связей мышц.</p>
+<p>Этот метод позволяет настроить связи между мышцами, чтобы они анимировались корректно.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.particle_system">
+<span id="deditor-particle-system-module"></span><h2>3deditor.particle_system module<a class="headerlink" href="#module-3deditor.particle_system" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.particle_system.ParticleSystem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.particle_system.</span></span><span class="sig-name descname"><span class="pre">ParticleSystem</span></span><a class="reference internal" href="_modules/3deditor/particle_system.html#ParticleSystem"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.particle_system.ParticleSystem" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Партикл-система.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>Наследует атрибуты и методы от класса ModelingTools.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.particle_system.ParticleSystem.__">
+<span class="sig-name descname"><span class="pre">выбрать_несколько_объектов</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/particle_system.html#ParticleSystem.выбрать_несколько_объектов"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.particle_system.ParticleSystem.__" title="Link to this definition"></a></dt>
+<dd><p>Выбрать несколько объектов.</p>
+<p>Этот метод позволяет пользователю выбирать несколько объектов в партикл-системе.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.rendering">
+<span id="deditor-rendering-module"></span><h2>3deditor.rendering module<a class="headerlink" href="#module-3deditor.rendering" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.rendering.Rendering">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.rendering.</span></span><span class="sig-name descname"><span class="pre">Rendering</span></span><a class="reference internal" href="_modules/3deditor/rendering.html#Rendering"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.rendering.Rendering" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Рендеринг.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>разрешение (int): Разрешение для рендеринга.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.rendering.Rendering._">
+<span class="sig-name descname"><span class="pre">выбрать_файл</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/rendering.html#Rendering.выбрать_файл"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.rendering.Rendering._" title="Link to this definition"></a></dt>
+<dd><p>Выбрать файл.</p>
+<p>Этот метод позволяет выбрать файл для рендеринга.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">изменить_разрешение</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/rendering.html#Rendering.изменить_разрешение"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#id9" title="Link to this definition"></a></dt>
+<dd><p>Изменить разрешение рендеринга.</p>
+<p>Этот метод позволяет изменить разрешение изображения для рендеринга.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.saving">
+<span id="deditor-saving-module"></span><h2>3deditor.saving module<a class="headerlink" href="#module-3deditor.saving" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.saving.Saving">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.saving.</span></span><span class="sig-name descname"><span class="pre">Saving</span></span><a class="reference internal" href="_modules/3deditor/saving.html#Saving"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.saving.Saving" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Сохранение и изменение файлов.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>название_файла (str): Название файла по умолчанию.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.saving.Saving.__">
+<span class="sig-name descname"><span class="pre">заменить_существующий_файл</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/saving.html#Saving.заменить_существующий_файл"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.saving.Saving.__" title="Link to this definition"></a></dt>
+<dd><p>Заменить существующий файл.</p>
+<p>Этот метод позволяет заменить существующий файл на новый.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.saving.Saving.____">
+<span class="sig-name descname"><span class="pre">открыть_для_изменения_существующий_файл</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/saving.html#Saving.открыть_для_изменения_существующий_файл"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.saving.Saving.____" title="Link to this definition"></a></dt>
+<dd><p>Открыть для изменения существующий файл.</p>
+<p>Этот метод позволяет открыть существующий файл для внесения изменений.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">сохранить_новый_файл</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/saving.html#Saving.сохранить_новый_файл"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#id10" title="Link to this definition"></a></dt>
+<dd><p>Сохранить новый файл.</p>
+<p>Этот метод позволяет сохранить новый файл с указанным названием.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.script_language">
+<span id="deditor-script-language-module"></span><h2>3deditor.script_language module<a class="headerlink" href="#module-3deditor.script_language" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.script_language.ScriptLanguage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.script_language.</span></span><span class="sig-name descname"><span class="pre">ScriptLanguage</span></span><a class="reference internal" href="_modules/3deditor/script_language.html#ScriptLanguage"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.script_language.ScriptLanguage" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Скриптовый язык программирования.</p>
+<dl class="simple">
+<dt>Методы:</dt><dd><p>создать_геометрию_модели(): Создает геометрию модели.
+наложить_текстуры(): Налагает текстуры на модель.
+изменить_размер(): Изменяет размер объекта.
+задать_координаты(): Задает координаты объекта.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.script_language.ScriptLanguage._">
+<span class="sig-name descname"><span class="pre">задать_координаты</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/script_language.html#ScriptLanguage.задать_координаты"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.script_language.ScriptLanguage._" title="Link to this definition"></a></dt>
+<dd><p>Задать координаты.</p>
+<p>Этот метод задает координаты созданной модели в пространстве.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">изменить_размер</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/script_language.html#ScriptLanguage.изменить_размер"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#id11" title="Link to this definition"></a></dt>
+<dd><p>Изменить размер.</p>
+<p>Этот метод изменяет размер созданной модели.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id12">
+<span class="sig-name descname"><span class="pre">наложить_текстуры</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/script_language.html#ScriptLanguage.наложить_текстуры"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#id12" title="Link to this definition"></a></dt>
+<dd><p>Наложить текстуры.</p>
+<p>Этот метод налагает текстуры на созданную модель.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.script_language.ScriptLanguage.__">
+<span class="sig-name descname"><span class="pre">создать_геометрию_модели</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/script_language.html#ScriptLanguage.создать_геометрию_модели"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.script_language.ScriptLanguage.__" title="Link to this definition"></a></dt>
+<dd><p>Создать геометрию модели.</p>
+<p>Этот метод создает геометрию для модели на основе скриптового языка программирования.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.shader_editor">
+<span id="deditor-shader-editor-module"></span><h2>3deditor.shader_editor module<a class="headerlink" href="#module-3deditor.shader_editor" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.shader_editor.ShaderEditor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.shader_editor.</span></span><span class="sig-name descname"><span class="pre">ShaderEditor</span></span><a class="reference internal" href="_modules/3deditor/shader_editor.html#ShaderEditor"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.shader_editor.ShaderEditor" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Редактор шейдеров.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>настройка_качества_шейдеров (int): Уровень настройки качества шейдеров.
+текстуры (int): Уровень настройки текстур.
+тени (int): Уровень настройки теней.
+освещение (int): Уровень настройки освещения.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-3deditor.simulation">
+<span id="deditor-simulation-module"></span><h2>3deditor.simulation module<a class="headerlink" href="#module-3deditor.simulation" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.simulation.Simulation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.simulation.</span></span><span class="sig-name descname"><span class="pre">Simulation</span></span><a class="reference internal" href="_modules/3deditor/simulation.html#Simulation"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.simulation.Simulation" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Графический движок для симуляции.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>реалистичность_движений_материала (int): Уровень реалистичности движений материала.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.simulation.Simulation._">
+<span class="sig-name descname"><span class="pre">анимировать_симуляцию</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/simulation.html#Simulation.анимировать_симуляцию"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.simulation.Simulation._" title="Link to this definition"></a></dt>
+<dd><p>Анимировать симуляцию.</p>
+<p>Этот метод запускает анимацию симуляции с использованием графического движка.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.toolbar_settings">
+<span id="deditor-toolbar-settings-module"></span><h2>3deditor.toolbar_settings module<a class="headerlink" href="#module-3deditor.toolbar_settings" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.toolbar_settings.ToolbarSettings">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.toolbar_settings.</span></span><span class="sig-name descname"><span class="pre">ToolbarSettings</span></span><a class="reference internal" href="_modules/3deditor/toolbar_settings.html#ToolbarSettings"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.toolbar_settings.ToolbarSettings" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Настройки редактора.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>настройки_по_умолчанию (bool): Флаг, указывающий, используются ли настройки по умолчанию.
+язык (str): Выбранный язык для редактора.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-3deditor.user_interface">
+<span id="deditor-user-interface-module"></span><h2>3deditor.user_interface module<a class="headerlink" href="#module-3deditor.user_interface" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.user_interface.UserInterface">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.user_interface.</span></span><span class="sig-name descname"><span class="pre">UserInterface</span></span><a class="reference internal" href="_modules/3deditor/user_interface.html#UserInterface"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.user_interface.UserInterface" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Пользовательский интерфейс редактора.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>ночной_режим (bool): Флаг, указывающий, используется ли ночной режим.
+размер_шрифта (int): Размер шрифта в пользовательском интерфейсе.
+подключенные_модули (list): Список подключенных модулей к редактору.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.user_interface.UserInterface.__">
+<span class="sig-name descname"><span class="pre">восстановить_по_умолчанию</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/user_interface.html#UserInterface.восстановить_по_умолчанию"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.user_interface.UserInterface.__" title="Link to this definition"></a></dt>
+<dd><p>Восстановить настройки по умолчанию.</p>
+<p>Этот метод возвращает настройки пользовательского интерфейса к значениям по умолчанию.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.user_interface.UserInterface.">
+<span class="sig-name descname"><span class="pre">вывести</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">подключенные_модули</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/user_interface.html#UserInterface.вывести"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.user_interface.UserInterface." title="Link to this definition"></a></dt>
+<dd><p>Вывести подключенные модули.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>подключенные_модули (list): Список модулей для вывода.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor.visualization">
+<span id="deditor-visualization-module"></span><h2>3deditor.visualization module<a class="headerlink" href="#module-3deditor.visualization" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="deditor.visualization.Visualization">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">3deditor.visualization.</span></span><span class="sig-name descname"><span class="pre">Visualization</span></span><a class="reference internal" href="_modules/3deditor/visualization.html#Visualization"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.visualization.Visualization" title="Link to this definition"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Визуализация и рендеринг.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>качество_визуализации_модели (int): Качество визуализации модели.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="deditor.visualization.Visualization._">
+<span class="sig-name descname"><span class="pre">визуализировать_модель</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/3deditor/visualization.html#Visualization.визуализировать_модель"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#deditor.visualization.Visualization._" title="Link to this definition"></a></dt>
+<dd><p>Визуализировать модель.</p>
+<p>Этот метод запускает процесс визуализации модели с использованием рендеринга.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-3deditor">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-3deditor" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Авторские права 2024, Mamchur PI-20a. </p>
+  </div>
+
+  Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

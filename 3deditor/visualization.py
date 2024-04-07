@@ -1,7 +1,4 @@
-from Rendering import Rendering
-
-
-class Visualization(Rendering):
+class Visualization():
     """ 
     Визуализация и рендеринг.
 

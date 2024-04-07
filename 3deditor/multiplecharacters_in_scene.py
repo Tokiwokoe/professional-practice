@@ -1,8 +1,4 @@
-from CharacterStudio import CharacterStudio
-from ParticleSystem import ParticleSystem
-
-
-class MultipleCharactersInScene(CharacterStudio, ParticleSystem):
+class MultipleCharactersInScene():
     """
     Инструмент для создания множественных персонажей в сцене.
 

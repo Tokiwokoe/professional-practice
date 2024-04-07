@@ -1,7 +1,4 @@
-from ModelingTools import ModelingTools
-
-
-class ParticleSystem(ModelingTools):
+class ParticleSystem():
     """ 
     Партикл-система.
 
